@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(24, 25, 26);
+  font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+header {
+  background-color: rgb(36, 37, 38);
+  border-bottom: 0.8px solid rgb(57, 58, 59);
+  box-sizing: content-box;
+  height: 56px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  .left-section {
+    background-color: lightblue;
+    width: 320px;
+    height: 56px;
+  }
+
+  .middle-section {
+    background-color: lightpink;
+    flex: 1;
+    height: 56px;
+  }
+
+  .right-section {
+    background-color: lightblue;
+    width: 204px;
+    height: 56px;
+  }
+}
+
+main {
+  overflow-y: scroll;
+  height: 100%;
+}
