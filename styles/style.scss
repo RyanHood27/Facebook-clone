@@ -8,13 +8,14 @@ body {
   background-color: rgb(24, 25, 26);
   font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 15px;
+  overflow-y: scroll;
 }
 
 header {
   background-color: rgb(36, 37, 38);
   border-bottom: 0.8px solid rgb(57, 58, 59);
-  box-sizing: content-box;
   height: 56px;
+  padding: 0 16px 0 18px;
   position: fixed;
   top: 0;
   left: 0;
@@ -24,22 +25,162 @@ header {
   justify-content: space-between;
 
   .left-section {
-    background-color: lightblue;
+    // background-color: lightblue;
     width: 320px;
-    height: 56px;
+    height: 48px;
+    margin-top: 7px;
+
+    display: flex;
+    gap: 8px;
+
+    .facebook-logo {
+      height: 41px;
+      vertical-align: top;
+      cursor: pointer;
+    }
+
+    .search-input-container {
+      position: relative;
+
+      .search-input {
+        background-color: rgb(58, 59, 60);
+        border: none;
+        border-radius: 22px;
+        width: 235px;
+        height: 42px;
+        padding-left: 37px;
+      }
+      .search-input::placeholder {
+        color: rgb(176, 179, 184);
+        font-size: 14.5px;
+      }
+      .search-input:focus {
+        outline: none;
+        color: white;
+      }
+
+      .search-icon {
+        position: absolute;
+        top: 13px;
+        left: 13px;
+      }
+    }
   }
 
   .middle-section {
-    background-color: lightpink;
     flex: 1;
     height: 56px;
+    max-width: 593px;
+    margin-right: 133px;
+    padding-top: 3px;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      li {
+        list-style-type: none;
+        border-radius: 8px;
+        height: 49px;
+        width: 110px;
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // home-icon-container for tooltip //
+        .home-icon-container {
+          display: flex;
+          justify-content: center;
+          position: relative;
+        }
+      }
+
+      li:hover {
+        background-color: rgb(58, 59, 60);
+      }
+
+      li:first-child:hover {
+        background-color: transparent;
+      }
+
+      li:hover .tooltip {
+        opacity: 0.9;
+      }
+
+      .blue-line {
+        background-color: rgb(35, 116, 225);
+        height: 3px;
+        width: 110px;
+        position: absolute;
+        bottom: 0;
+      }
+    }
   }
 
   .right-section {
-    background-color: lightblue;
-    width: 204px;
+    width: 190px;
     height: 56px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .home-icon-container {
+      background-color: rgb(58, 59, 60);
+      border-radius: 50%;
+      height: 42px;
+      width: 42px;
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .menu-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .user-profile {
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      .tooltip2 {
+        bottom: -43px;
+      }
+
+      .tooltip3 {
+        bottom: -43px;
+        left: -40px;
+      }
+    }
+
+    .home-icon-container:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .home-icon-container:hover .tooltip {
+      opacity: 0.9;
+    }
   }
+}
+
+.tooltip {
+  color: black;
+  font-size: 13.5px;
+  background-color: hsl(0, 0%, 80%);
+  border-radius: 8px;
+  width: fit-content;
+  padding: 8px 10px;
+  position: absolute;
+  bottom: -51px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
 }
 
 main {

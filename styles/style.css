@@ -8,13 +8,14 @@ body {
   background-color: #18191a;
   font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 15px;
+  overflow-y: scroll;
 }
 
 header {
   background-color: #242526;
   border-bottom: 0.8px solid #393a3b;
-  box-sizing: content-box;
   height: 56px;
+  padding: 0 16px 0 18px;
   position: fixed;
   top: 0;
   left: 0;
@@ -24,21 +25,158 @@ header {
 }
 
 header .left-section {
-  background-color: lightblue;
   width: 320px;
-  height: 56px;
+  height: 48px;
+  margin-top: 7px;
+  display: flex;
+  gap: 8px;
+}
+
+header .left-section .facebook-logo {
+  height: 41px;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+header .left-section .search-input-container {
+  position: relative;
+}
+
+header .left-section .search-input-container .search-input {
+  background-color: #3a3b3c;
+  border: none;
+  border-radius: 22px;
+  width: 235px;
+  height: 42px;
+  padding-left: 37px;
+}
+
+header .left-section .search-input-container .search-input::placeholder {
+  color: #b0b3b8;
+  font-size: 14.5px;
+}
+
+header .left-section .search-input-container .search-input:focus {
+  outline: none;
+  color: white;
+}
+
+header .left-section .search-input-container .search-icon {
+  position: absolute;
+  top: 13px;
+  left: 13px;
 }
 
 header .middle-section {
-  background-color: lightpink;
   flex: 1;
   height: 56px;
+  max-width: 593px;
+  margin-right: 133px;
+  padding-top: 3px;
+}
+
+header .middle-section ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .middle-section ul li {
+  list-style-type: none;
+  border-radius: 8px;
+  height: 49px;
+  width: 110px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .middle-section ul li .home-icon-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+header .middle-section ul li:hover {
+  background-color: #3a3b3c;
+}
+
+header .middle-section ul li:first-child:hover {
+  background-color: transparent;
+}
+
+header .middle-section ul li:hover .tooltip {
+  opacity: 0.9;
+}
+
+header .middle-section ul .blue-line {
+  background-color: #2374e1;
+  height: 3px;
+  width: 110px;
+  position: absolute;
+  bottom: 0;
 }
 
 header .right-section {
-  background-color: lightblue;
-  width: 204px;
+  width: 190px;
   height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .right-section .home-icon-container {
+  background-color: #3a3b3c;
+  border-radius: 50%;
+  height: 42px;
+  width: 42px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .right-section .home-icon-container .menu-icon {
+  width: 20px;
+  height: 20px;
+}
+
+header .right-section .home-icon-container .user-profile {
+  height: 100%;
+  border-radius: 50%;
+}
+
+header .right-section .home-icon-container .tooltip2 {
+  bottom: -43px;
+}
+
+header .right-section .home-icon-container .tooltip3 {
+  bottom: -43px;
+  left: -40px;
+}
+
+header .right-section .home-icon-container:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+header .right-section .home-icon-container:hover .tooltip {
+  opacity: 0.9;
+}
+
+.tooltip {
+  color: black;
+  font-size: 13.5px;
+  background-color: #cccccc;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 8px 10px;
+  position: absolute;
+  bottom: -51px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
 }
 
 main {
