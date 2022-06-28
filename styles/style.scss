@@ -2,11 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+  color: white;
 }
 
 body {
   background-color: rgb(24, 25, 26);
-  font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 15px;
   overflow-y: scroll;
 }
@@ -46,8 +47,8 @@ header {
         background-color: rgb(58, 59, 60);
         border: none;
         border-radius: 22px;
-        width: 235px;
-        height: 42px;
+        width: 232px;
+        height: 40px;
         padding-left: 37px;
       }
       .search-input::placeholder {
@@ -183,7 +184,137 @@ header {
   pointer-events: none;
 }
 
+// main-center //
 main {
   overflow-y: scroll;
   height: 100%;
+}
+
+// aside-left //
+aside {
+  height: 100vh;
+  width: 280px;
+  padding: 12px 8px 70px 7px;
+  overflow-y: overlay;
+  overflow-x: hidden;
+
+  position: fixed;
+  top: 56px;
+
+  .div-container {
+    // background-color: transparent;
+    border-radius: 12px;
+    padding: 8px;
+    transition: background-color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    .image {
+      border-radius: 50%;
+      height: 33px;
+    }
+
+    .name-tag {
+      color: rgb(216, 218, 223);
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+
+  .div-container:hover {
+    background-color: rgba(58, 59, 60, 0.7);
+  }
+
+  .see-more {
+    i {
+      background-color: rgba(58, 59, 60, 0.7);
+      border-radius: 50%;
+      height: 28px;
+      width: 28px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .arrow-up-svg {
+        height: 16px;
+        width: 16px;
+      }
+    }
+  }
+
+  .line-separator {
+    border-bottom: 0.1px solid rgba(255, 255, 255, 0.2);
+    height: 0;
+    width: 94%;
+    margin: 8px 0 0 7px;
+  }
+
+  .your-shortcuts-container {
+    .your-shortcuts {
+      height: 45px;
+      margin-top: 5px;
+      padding: 8px 0 3px 8px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span:first-child {
+        color: rgb(176, 179, 184);
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      span:last-child {
+        border-radius: 5px;
+        color: rgb(69, 153, 255);
+        padding: 8px;
+        visibility: hidden;
+      }
+      span:last-child:hover {
+        background-color: rgba(58, 59, 60, 0.5);
+      }
+    }
+  }
+  .your-shortcuts-container:hover span:last-child {
+    visibility: visible;
+  }
+
+  footer {
+    padding: 8px;
+
+    a {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 13.5px;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+aside::-webkit-scrollbar {
+  width: 1.1em;
+}
+
+aside::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 4px solid transparent;
+  border-radius: 9px;
+  background-clip: content-box;
+  visibility: hidden;
+}
+
+aside::-webkit-scrollbar-track:hover {
+  background-color: rgba(58, 59, 60, 0.4);
+}
+aside:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
 }
